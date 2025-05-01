@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleLab</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Página de inicio -->
+  <div id="start-page" class="page">
+    <div class="top-bar">
+      <button onclick="toggleDropdown()" class="dropbtn">⚙️</button>
+      <div id="dropdown-content" class="dropdown-content hidden">
+        <a href="#">👤 Perfil</a>
+        <a href="#">⚙️ Configuración</a>
+      </div>
+      <button onclick="toggleSidebar()" class="hamburger-btn">☰</button>
+    </div>
+    <img src="logo.png" alt="StyleLab Logo" class="logo" />
+    <h1>Bienvenido a <strong>StyleLab</strong></h1>
+    <button onclick="showLoginPage()">Iniciar Sesión 👤</button>
+    <button onclick="showCreateAccountPage()">Registrarse 🔒</button>
+  </div>
+
+  <!-- Página de login -->
+  <div id="login-page" class="page hidden">
+    <div class="login-box">
+      <img src="logo.png" alt="StyleLab Logo" class="logo" />
+      <h2>Iniciar Sesión 🔒</h2>
+      <input type="text" id="username" placeholder="👤 Usuario" />
+      <input type="password" id="password" placeholder="🔒 Contraseña" />
+      <button onclick="login()">Entrar</button>
+      <p id="login-error" class="error"></p>
+      <button onclick="backToStartPage()">Volver</button>
+    </div>
+  </div>
+
+  <!-- Página de crear cuenta -->
+  <div id="create-account-page" class="page hidden">
+    <div class="login-box">
+      <img src="logo.png" alt="StyleLab Logo" class="logo" />
+      <h2>Crear Cuenta</h2>
+      <input type="text" id="new-username" placeholder="👤 Nuevo Usuario" />
+      <input type="password" id="new-password" placeholder="🔒 Nueva Contraseña" />
+      <button onclick="createAccount()">Crear</button>
+      <button onclick="backToStartPage()">Volver</button>
+      <p id="create-account-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Página del closet -->
+  <div id="closet-page" class="page hidden">
+    <div class="top-bar">
+      <button onclick="toggleDropdown()" class="dropbtn">⚙️</button>
+      <div id="dropdown-content" class="dropdown-content hidden">
+        <a href="#">👤 Perfil</a>
+        <a href="#">⚙️ Configuración</a>
+        <a href="#" onclick="logout()">Cerrar Sesión</a>
+      </div>
+      <button onclick="toggleSidebar()" class="hamburger-btn">☰</button>
+    </div>
+
+    <img src="logo.png" alt="StyleLab Logo" class="logo" />
+    <h1>Tu Closet - <strong>StyleLab</strong></h1>
+
+    <!-- Grid de Categorías -->
+    <div class="filters">
+      <div class="category-grid">
+        <button onclick="chooseCategory('Tops')">👕 Tops</button>
+        <button onclick="chooseCategory('Bottoms')">👖 Bottoms</button>
+        <button onclick="chooseCategory('Shoes')">👟 Zapatos</button>
+        <button onclick="chooseCategory('Accessories')">💍 Accesorios</button>
+      </div>
+    </div>
+
+    <!-- Submenú de tipos -->
+    <div id="subcategory-menu" class="hidden">
+      <button onclick="chooseSubCategory('Camisa')">👕 Camisa</button>
+      <button onclick="chooseSubCategory('Jeans')">👖 Jeans</button>
+      <button onclick="chooseSubCategory('Cadena')">💍 Cadena</button>
+      <button onclick="chooseSubCategory('Gorra')">🧢 Gorra</button>
+    </div>
+
+    <!-- Formulario para prenda -->
+    <div id="clothing-form" class="hidden">
+      <h2>Detalles de la Prenda</h2>
+      <input type="text" id="item-name" placeholder="Ej. Camisa de manga larga" />
+      <input type="color" id="item-color" />
+      <button onclick="saveItem()">Guardar combinación 💾</button>
+    </div>
+
+    <h2>Prendas Guardadas</h2>
+    <div id="saved-items" class="catalog"></div>
+
+    <h2>Generar Outfit</h2>
+    <button onclick="generateOutfit()">Crear Outfit</button>
+    <div id="generated-outfit" class="page hidden">
+      <h3>Outfit Sugerido</h3>
+      <div id="outfit-display"></div>
+      <button onclick="generateOutfit()">Otro Outfit</button>
+    </div>
+  </div>
+
+  <!-- Menú Lateral -->
+  <div id="sidebar" class="sidebar hidden">
+    <button onclick="toggleSidebar()">Cerrar ☒</button>
+    <ul>
+      <li><a href="#">📜 Historial</a></li>
+      <li><a href="#">❓ Ayuda</a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

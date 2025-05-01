@@ -1,0 +1,155 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.page {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+input, button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input {
+  background-color: #fafafa;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filters button {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2ecc71;
+}
+
+.filters i {
+  margin-right: 8px;
+}
+
+.catalog {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.top-bar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: none;
+  min-width: 160px;
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+#subcategory-menu button {
+  background-color: #e74c3c;
+  color: white;
+  margin: 5px;
+  padding: 8px 15px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #ecf0f1;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.sidebar.hidden {
+  display: none;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 0;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .page {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
